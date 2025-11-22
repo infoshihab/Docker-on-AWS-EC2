@@ -9,3 +9,10 @@ docker ps
 sudo chmod 666 /var/run/docker.sock
 sudo systemctl enable docker
 docker --version
+
+
+#Normal Docker Command
+docker ps -a
+docker images
+docker rm container_id --> remove the image (Step -1)
+docker rmi image_id --> delete the image (Step -2)
