@@ -24,3 +24,19 @@ dcoker logs Container_ID
 docker exec -it Container_ID/bin/bash
 (^ we use this command for running container , for running additional command we use that )
 (^Allow us to access the terminal or shall of our running container)
+
+
+Docker network
+
+docker network ls
+docker network rm NETWORK_ID (for delete)
+docker network create NAME
+
+
+
+
+
+
+
+demo_admin
+portfolio pass
