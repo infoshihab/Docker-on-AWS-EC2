@@ -16,3 +16,11 @@ docker ps -a
 docker images
 docker rm container_id --> remove the image (Step -1)
 docker rmi image_id --> delete the image (Step -2)
+
+TrubleSooting Commands
+
+dcoker logs Container_ID
+
+docker exec -it Container_ID/bin/bash
+(^ we use this command for running container , for running additional command we use that )
+(^Allow us to access the terminal or shall of our running container)
