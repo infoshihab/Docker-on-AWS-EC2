@@ -35,7 +35,66 @@ docker network create NAME
 
 #Docker Compose
 
+------------***-------------
+file name --> mongo.yaml
+version: "3.8"
 
+services:
+ mongo:
+   image: mongo
+   ports:
+   - 27017:27017
+   environment:
+   MONGO_INITDB_ROOT_USERNAME:demo_admin
+   MONGO_INITDB_ROOT_PASSWORD:password
+
+
+
+ mongo-express:
+  image: mongo-express
+  ports:
+  - 8081:8081
+  environment:
+   ME_CONFIG_MONGODB_ADMINUSERNAME:demo_admin
+   ME_CONFIG_MONGODB_ADMINPASSWORD:password
+   ME_CONFIG_MONGODB_URL: mongodb://demo_admin:password@mongo:27017/
+
+
+>>>>>>>>>>>RUN>>>>>>>>>>>>
+docker compose -f mongo.yaml up -d
+docker compose -f mongo.yaml down 
+
+-------------***------------------
+
+
+
+#Dockerize app
+file name --> Dockerfile
+
+FROM node
+
+ENV MONGO_DB_USERNAME=demo_admin \
+    MONGO_DB_PWD=password123
+
+
+RUN mkdir -p demo/nodeapp
+
+COPY . /demo/nodeapp
+
+RUN npm install
+
+CMD ["node"."/demo/nodeapp/server.js",]
+
+
+--------***--------
+docker built -t (APP NAME)nodeapp:(VERSION)1.0 .THE_FILE_PATH 
+
+
+----------------------------*****************-----------------
+docker run -it -v /Users/dekstop/data:/test/data ubuntu
+ls
+cd data
+touch index.html
 
 
 
