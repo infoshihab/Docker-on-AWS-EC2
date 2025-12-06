@@ -97,6 +97,11 @@ cd data
 touch index.html
 
 
+where the key run that terminal
+after the terminal run , run the ssh client 3 and the example command
+
+
+
 
 demo_admin
 portfolio pass
